@@ -3,13 +3,6 @@
 version = 4
 
 [[package]]
-name = "approximation"
-version = "0.1.0"
-dependencies = [
- "ordered-float",
-]
-
-[[package]]
 name = "autocfg"
 version = "1.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -31,4 +24,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8c7c9e0d9b23589f26070720bac724174bfec1083e82f7854cdd0267518343c0"
 dependencies = [
  "num-traits",
+]
+
+[[package]]
+name = "spring_approximator"
+version = "0.0.0-private"
+dependencies = [
+    "ordered-float",
 ]

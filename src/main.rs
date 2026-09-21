@@ -1,104 +1,165 @@
 use ordered_float::OrderedFloat;
 use std::collections::BTreeMap;
-use std::ops::{Add, Mul};
 
-type TimeFloat = OrderedFloat<f64>;
-type ValueFloat = f64;
+type Time = OrderedFloat<f64>;
+type Position = f64;
+type Velocity = f64;
+type Acceleration = f64;
+type Spring = f64;
+type Mass = f64;
 
-/// The Entire system, with saved datapoints
-#[derive(Debug)]
-struct System<F, const N: usize>
-where
-    F: Fn(TimeFloat, ValuesVector<N>) -> ValuesVector<N>,
-{
-    /// The calculated datapoints. Is a BTreeMap for ordering
-    datapoints: BTreeMap<TimeFloat, ValuesVector<N>>,
-    /// The differntial equation which gives new values for next iteration.
-    func: F,
-    /// How Many Seconds per step?
-    h: TimeFloat,
+#[derive(Debug, Clone)]
+struct SpringSystem {
+    spring_constant: Spring,
+    values: BTreeMap<Time, MechanicalValues>,
+    delta_time: Time,
+    mass: Mass,
 }
 
-impl<F, const N: usize> System<F, N>
-where
-    F: Fn(TimeFloat, ValuesVector<N>) -> ValuesVector<N>,
-{
-    /// Create a new system with the given initial values y_0, h, and a function.
-    fn new(initial_values: ValuesVector<N>, func: F, h: TimeFloat) -> Self {
-        let mut datapoints = BTreeMap::new();
-        datapoints.insert(OrderedFloat(0.0), initial_values);
+#[derive(Debug, Clone)]
+struct MechanicalValues {
+    position: Position,
+    velocity: Velocity,
+    acceleration: Acceleration,
+}
+
+impl MechanicalValues {
+    fn new(position: Position, velocity: Velocity, acceleration: Acceleration) -> Self {
         Self {
-            datapoints,
-            func,
-            h,
+            position,
+            velocity,
+            acceleration,
         }
     }
+}
 
-    /// Perform one H step for Runge Kutta Order 4 method.
+impl SpringSystem {
+    fn new(spring_constant: Spring, position: Position, delta_time: Time, mass: Mass) -> Self {
+        let mut values = BTreeMap::new();
+
+        let a = -(spring_constant / mass) * position;
+        let mech_val = MechanicalValues::new(position, 0.0, a);
+        values.insert(OrderedFloat(0.0), mech_val);
+        Self {
+            values,
+            spring_constant,
+            mass,
+            delta_time,
+        }
+    }
+    fn a(&self, position: Position) -> Acceleration {
+        let d = self.spring_constant;
+        let m = self.mass;
+
+        (-d / m) * position
+    }
+
+    fn last_a(&self) -> Acceleration {
+        (*self
+            .values
+            .last_key_value()
+            .expect("There should be a value")
+            .1)
+            .acceleration
+    }
+
+    fn last_v(&self) -> Velocity {
+        (*self
+            .values
+            .last_key_value()
+            .expect("There should be a value")
+            .1)
+            .velocity
+    }
+
+    fn last_x(&self) -> Position {
+        (*self
+            .values
+            .last_key_value()
+            .expect("There should be a value")
+            .1)
+            .position
+    }
+
+    fn last_t(&self) -> Time {
+        *self
+            .values
+            .last_key_value()
+            .expect("There should be a value")
+            .0
+    }
+}
+
+// Leapfrog
+impl SpringSystem {
+    fn lf_v(&self) -> Velocity {
+        let v_i = self.last_v();
+        let a_i = self.last_a();
+        let a_i_next = self.a(self.lf_x());
+        let dt = self.delta_time.0;
+
+        v_i + 0.5 * (a_i + a_i_next) * dt
+    }
+
+    fn lf_x(&self) -> Position {
+        let x_i = self.last_x();
+        let v_i = self.last_v();
+        let a_i = self.last_a();
+        let dt = self.delta_time.0;
+
+        x_i + v_i * dt + 0.5 * a_i * dt.powi(2)
+    }
+
+    fn lf_step(&mut self) {
+        let x = self.lf_x();
+        let v = self.lf_v();
+        let a = self.a(x);
+        let t = self.last_t() + self.delta_time.0;
+        let mech_vals = MechanicalValues::new(x, v, a);
+        self.values.insert(t, mech_vals);
+    }
+}
+
+// Runge-Kutta 4th Order
+impl SpringSystem {
+    fn rk4_x(&self) -> Velocity {
+        let v_i = self.last_v();
+
+        let k_1 = v_i;
+        let k_2 = v_i + 0.5 * self.delta_time.0 * k_1;
+        let k_3 = v_i + 0.5 * self.delta_time.0 * k_2;
+        let k_4 = v_i + self.delta_time.0 * k_3;
+
+        v_i + (self.delta_time.0 / 6.0) * (k_1 + 2.0 * k_2 + 2.0 * k_3 + k_4)
+    }
+
+    fn rk4_v(&self) -> Velocity {
+        let x_i = self.last_x();
+
+        let k_1 = self.a(x_i);
+        let k_2 = self.a(x_i + 0.5 * self.delta_time.0 * k_1);
+        let k_3 = self.a(x_i + 0.5 * self.delta_time.0 * k_2);
+        let k_4 = self.a(x_i + self.delta_time.0 * k_3);
+
+        x_i + (self.delta_time.0 / 6.0) * (k_1 + 2.0 * k_2 + 2.0 * k_3 + k_4)
+    }
+
     fn rk4_step(&mut self) {
-        let (&t_n, &y_n) = self
-            .datapoints
-            .last_key_value()
-            .expect("There should be at least one value");
-        let k_1 = (self.func)(t_n, y_n);
-        let k_2 = (self.func)(t_n + (self.h / 2.0), y_n + k_1 * (self.h / 2.0));
-        let k_3 = (self.func)(t_n + (self.h / 2.0), y_n + k_2 * (self.h / 2.0));
-        let k_4 = (self.func)(t_n + self.h, y_n + k_3 * self.h);
-
-        let t_n_new = t_n + self.h;
-        let y_n_new = y_n + (k_1 + k_2 * 2.0 + k_3 * 2.0 + k_4) * (self.h / 6.0);
-
-        self.datapoints.insert(t_n_new, y_n_new);
-    }
-
-    /// Perform N steps of Runge Kutta Order 4 method
-    fn rk4_n_times(&mut self, n: usize) {
-        for _ in 0..n {
-            self.rk4_step();
-        }
-    }
-
-    /// Perform Runge Kutta Order 4 method until `target_time` is reached.
-    fn rk4_until(&mut self, target_time: TimeFloat) {
-        let (&mut t, _) = self
-            .datapoints
-            .last_key_value()
-            .expect("There should be at least one value");
-
-        while t < target_time {
-            t += self.h;
-            self.rk4_step();
-        }
-    }
-}
-
-#[derive(Debug, Clone, Copy)]
-struct ValuesVector<const N: usize>([ValueFloat; N]);
-
-impl<const N: usize> Add for ValuesVector<N> {
-    type Output = Self;
-
-    fn add(self, other: Self) -> Self {
-        Self(std::array::from_fn(|i| self.0[i] + other.0[i]))
-    }
-}
-
-impl<const N: usize> Mul<f64> for ValuesVector<N> {
-    type Output = Self;
-
-    fn mul(self, factor: f64) -> Self {
-        Self(self.0.map(|v| v * factor))
-    }
-}
-
-impl<const N: usize> Mul<OrderedFloat<f64>> for ValuesVector<N> {
-    type Output = Self;
-
-    fn mul(self, factor: OrderedFloat<f64>) -> Self {
-        Self(self.0.map(|v| v * factor.0))
+        let x = self.rk4_x();
+        let v = self.rk4_v();
+        let a = self.a(x);
+        let t = self.last_t() + self.delta_time.0;
+        let mech_vals = MechanicalValues::new(x, v, a);
+        self.values.insert(t, mech_vals);
     }
 }
 
 fn main() {
-    todo!("Create a simulation of pendula");
+    let mut system = SpringSystem::new(-1.2, 1.0, OrderedFloat(1.0), 10.0);
+
+    for _ in 0..100 {
+        system.rk4_step();
+    }
+
+    dbg!(system.values);
 }
