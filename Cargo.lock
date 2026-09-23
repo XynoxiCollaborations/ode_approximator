@@ -30,5 +30,5 @@ dependencies = [
 name = "spring_approximator"
 version = "0.0.0-private"
 dependencies = [
-    "ordered-float",
+ "ordered-float",
 ]

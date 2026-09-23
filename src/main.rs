@@ -122,26 +122,28 @@ impl SpringSystem {
 
 // Runge-Kutta 4th Order
 impl SpringSystem {
-    fn rk4_x(&self) -> Velocity {
+    fn rk4_x(&self) -> Position {
         let v_i = self.last_v();
+        let x_i = self.last_x();
 
         let k_1 = v_i;
         let k_2 = v_i + 0.5 * self.delta_time.0 * k_1;
         let k_3 = v_i + 0.5 * self.delta_time.0 * k_2;
         let k_4 = v_i + self.delta_time.0 * k_3;
 
-        v_i + (self.delta_time.0 / 6.0) * (k_1 + 2.0 * k_2 + 2.0 * k_3 + k_4)
+        x_i + (self.delta_time.0 / 6.0) * (k_1 + 2.0 * k_2 + 2.0 * k_3 + k_4)
     }
 
     fn rk4_v(&self) -> Velocity {
         let x_i = self.last_x();
+        let v_i = self.last_v();
 
         let k_1 = self.a(x_i);
         let k_2 = self.a(x_i + 0.5 * self.delta_time.0 * k_1);
         let k_3 = self.a(x_i + 0.5 * self.delta_time.0 * k_2);
         let k_4 = self.a(x_i + self.delta_time.0 * k_3);
 
-        x_i + (self.delta_time.0 / 6.0) * (k_1 + 2.0 * k_2 + 2.0 * k_3 + k_4)
+        v_i + (self.delta_time.0 / 6.0) * (k_1 + 2.0 * k_2 + 2.0 * k_3 + k_4)
     }
 
     fn rk4_step(&mut self) {
