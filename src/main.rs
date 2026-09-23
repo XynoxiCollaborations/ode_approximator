@@ -156,12 +156,89 @@ impl SpringSystem {
     }
 }
 
-fn main() {
-    let mut system = SpringSystem::new(-1.2, 1.0, OrderedFloat(1.0), 10.0);
+// Euler Method
+impl SpringSystem {
+    fn euler_x(&self) -> Position {
+        let x_i = self.last_x();
+        let v_i = self.last_v();
 
-    for _ in 0..100 {
-        system.rk4_step();
+        x_i + v_i * self.delta_time.0
     }
 
-    dbg!(system.values);
+    fn euler_v(&self) -> Velocity {
+        let v_i = self.last_v();
+        let a_i = self.last_a();
+
+        v_i + a_i * self.delta_time.0
+    }
+
+    fn euler_step(&mut self) {
+        let x = self.euler_x();
+        let v = self.euler_v();
+        let a = self.a(x);
+        let t = self.last_t() + self.delta_time.0;
+        let mech_vals = MechanicalValues::new(x, v, a);
+        self.values.insert(t, mech_vals);
+    }
 }
+
+// Euler-Cromer method
+impl SpringSystem {
+    fn ec_x(&self) -> Position {
+        let x_i = self.last_x();
+        let v_next = self.ec_v();
+
+        x_i + v_next * self.delta_time.0
+    }
+
+    fn ec_v(&self) -> Velocity {
+        let v_i = self.last_v();
+        let a_i = self.last_a();
+
+        v_i + a_i * self.delta_time.0
+    }
+
+    fn ec_step(&mut self) {
+        let x = self.euler_x();
+        let v = self.euler_v();
+        let a = self.a(x);
+        let t = self.last_t() + self.delta_time.0;
+        let mech_vals = MechanicalValues::new(x, v, a);
+        self.values.insert(t, mech_vals);
+    }
+}
+
+// Heun's method
+impl SpringSystem {
+    fn heun_x(&self) -> Position {
+        let x_i = self.last_x();
+        let v_i = self.last_v();
+        let a_i = self.last_a();
+
+        let v_predict = v_i + a_i * self.delta_time.0;
+
+        x_i + self.delta_time.0 / 2.0 * (v_i + v_predict)
+    }
+
+    fn heun_v(&self) -> Velocity {
+        let x_i = self.last_x();
+        let v_i = self.last_v();
+        let a_i = self.last_a();
+
+        let x_predict = x_i + v_i * self.delta_time.0;
+        let a_predict = self.a(x_predict);
+
+        v_i + self.delta_time.0 / 2.0 * (a_i + a_predict)
+    }
+
+    fn heun_step(&mut self) {
+        let x = self.heun_x();
+        let v = self.heun_v();
+        let a = self.a(x);
+        let t = self.last_t() + self.delta_time.0;
+        let mech_vals = MechanicalValues::new(x, v, a);
+        self.values.insert(t, mech_vals);
+    }
+}
+
+fn main() {}
