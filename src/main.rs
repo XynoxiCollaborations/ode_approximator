@@ -1,5 +1,9 @@
+se anyhow::Result;
+use arrow_array::{ArrayRef, Float64Array, RecordBatch};
 use ordered_float::OrderedFloat;
+use parquet::arrow::ArrowWriter;
 use std::collections::BTreeMap;
+use std::{fs::File, sync::Arc};
 
 type Time = OrderedFloat<f64>;
 type Position = f64;
@@ -14,9 +18,10 @@ struct SpringSystem {
     values: BTreeMap<Time, MechanicalValues>,
     delta_time: Time,
     mass: Mass,
+    amplitude: Position,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Copy)]
 struct MechanicalValues {
     position: Position,
     velocity: Velocity,
@@ -40,13 +45,17 @@ impl SpringSystem {
         let a = -(spring_constant / mass) * position;
         let mech_val = MechanicalValues::new(position, 0.0, a);
         values.insert(OrderedFloat(0.0), mech_val);
+        let amplitude = position;
+
         Self {
             values,
             spring_constant,
             mass,
             delta_time,
+            amplitude,
         }
     }
+
     fn a(&self, position: Position) -> Acceleration {
         let d = self.spring_constant;
         let m = self.mass;
@@ -87,6 +96,43 @@ impl SpringSystem {
             .last_key_value()
             .expect("There should be a value")
             .0
+    }
+
+    fn write_to_file(&self, path: &str) -> Result<()> {
+        let times = self.values.keys().map(|&t| t.0).collect::<Float64Array>();
+
+        let positions = self
+            .values
+            .values()
+            .map(|&mv| mv.position)
+            .collect::<Float64Array>();
+
+        let velocities = self
+            .values
+            .values()
+            .map(|&mv| mv.velocity)
+            .collect::<Float64Array>();
+
+        let accelerations = self
+            .values
+            .values()
+            .map(|&mv| mv.acceleration)
+            .collect::<Float64Array>();
+
+        let batch = RecordBatch::try_from_iter([
+            ("time", Arc::new(times) as ArrayRef),
+            ("position", Arc::new(positions) as ArrayRef),
+            ("velocity", Arc::new(velocities) as ArrayRef),
+            ("acceleration", Arc::new(accelerations) as ArrayRef),
+        ])?;
+
+        let file = File::create(path)?;
+
+        let mut writer = ArrowWriter::try_new(file, batch.schema(), None)?;
+        writer.write(&batch)?;
+        writer.close()?;
+
+        Ok(())
     }
 }
 
@@ -199,8 +245,8 @@ impl SpringSystem {
     }
 
     fn ec_step(&mut self) {
-        let x = self.euler_x();
-        let v = self.euler_v();
+        let x = self.ec_x();
+        let v = self.ec_v();
         let a = self.a(x);
         let t = self.last_t() + self.delta_time.0;
         let mech_vals = MechanicalValues::new(x, v, a);
@@ -241,4 +287,73 @@ impl SpringSystem {
     }
 }
 
-fn main() {}
+fn main() -> Result<()> {
+    let steps = 200;
+
+    let spring_constant = 1.0;
+    let position = 1.0;
+    let time = OrderedFloat(0.1);
+    let mass = 1.0;
+
+    // Leapfrog
+    {
+        let path = "./data/leapfrog.parquet";
+
+        let mut system = SpringSystem::new(spring_constant, position, time, mass);
+        for _ in 0..steps {
+            system.lf_step();
+        }
+
+        system.write_to_file(path)?;
+    }
+
+    // Runge Kutta 4th Order
+    {
+        let path = "./data/classical_runge_kutta.parquet";
+
+        let mut system = SpringSystem::new(spring_constant, position, time, mass);
+        for _ in 0..steps {
+            system.rk4_step();
+        }
+
+        system.write_to_file(path)?;
+    }
+
+    // Euler
+    {
+        let path = "./data/euler.parquet";
+
+        let mut system = SpringSystem::new(spring_constant, position, time, mass);
+        for _ in 0..steps {
+            system.euler_step();
+        }
+
+        system.write_to_file(path)?;
+    }
+
+    // Euler-Cromer
+    {
+        let path = "./data/euler_cromer.parquet";
+
+        let mut system = SpringSystem::new(spring_constant, position, time, mass);
+        for _ in 0..steps {
+            system.ec_step();
+        }
+
+        system.write_to_file(path)?;
+    }
+
+    // Heun's
+    {
+        let path = "./data/heun.parquet";
+
+        let mut system = SpringSystem::new(spring_constant, position, time, mass);
+        for _ in 0..steps {
+            system.heun_step();
+        }
+
+        system.write_to_file(path)?;
+    }
+
+    Ok(())
+}

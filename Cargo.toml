@@ -4,4 +4,7 @@ version = "0.0.0-private"
 edition = "2024"
 
 [dependencies]
+anyhow = "1.0.104"
+arrow-array = "60.0.0"
 ordered-float = "5.5.0"
+parquet = "60.0.0"

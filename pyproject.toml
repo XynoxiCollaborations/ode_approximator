@@ -1,0 +1,18 @@
+[project]
+name = "ode-visualiser"
+version = "0.0.0"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "altair[save]>=6.3.0",
+    "fastparquet>=2026.9.0",
+    "numpy>=2.5.3",
+    "pandas>=3.0.6",
+    "pathlib>=1.0.1",
+    "pyarrow>=25.0.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.10",
+]

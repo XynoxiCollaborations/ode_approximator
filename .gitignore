@@ -1,2 +1,5 @@
 /target
 .idea
+.venv
+*.lock
+.python-version
