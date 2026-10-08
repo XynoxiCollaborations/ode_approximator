@@ -16,44 +16,59 @@ y_format = (
     )
 )
 
+model_domain = ["Exakte Lösung", "Leapfrog", "Runge-Kutta (4. Ordnung)", "Heun"]
+model_range = ["black", "red", "orange", "green"]
+model_scale = alt.Scale(domain=model_domain, range=model_range)
+
 lf_data = pd.read_parquet(data_path / "leapfrog.parquet")
 lf_data["model"] = "Leapfrog"
+lf_elided_data = lf_data.iloc[::2]
 
 rk4_data = pd.read_parquet(data_path / "classical_runge_kutta.parquet")
-rk4_data["model"] = "Runge Kutta (4. Ordnung)"
+rk4_data["model"] = "Runge-Kutta (4. Ordnung)"
 
-sim_data = pd.concat([lf_data, rk4_data])
+heun_data = pd.read_parquet(data_path / "heun.parquet")
+heun_data["model"] = "Heun"
+heun_elided_data = heun_data.iloc[1::2]
+
+sim_data = pd.concat([lf_elided_data, rk4_data, heun_elided_data])
 sim_chart = (
     alt.Chart(sim_data)
     .mark_point(
-        size=10,
+        size=14,
+        opacity=1.0,
         filled=True,
     )
     .encode(
         x=x_format,
         y=y_format,
-        color=alt.Color("model:N").legend(title="Model"),
+        color=alt.Color("model:N", scale=model_scale).legend(
+            title="Model", orient="bottom"
+        ),
     )
 )
 
-num_data = alt.sequence(0, 20, 0.1, as_="time")
+num_data = pd.DataFrame({"time": np.arange(0.0, 20.1, 0.1)})
+num_data["model"] = "Exakte Lösung"
+
 num_graph = (
     alt.Chart(num_data)
     .transform_calculate(position="cos(datum.time)")
     .mark_line(
         color="black",
-        strokeWidth=1.5,
-        strokeDash=[8, 4],
-        opacity=0.7,
+        strokeWidth=1,
     )
     .encode(
         x=x_format,
         y=y_format,
+        color=alt.Color("model:N", scale=model_scale).legend(
+            title="Model", orient="bottom"
+        ),
     )
 )
 
-(sim_chart + num_graph).properties(
-    title="Vergleich Runge-Kutta und Leapfrog",
-    width=700,
+(num_graph + sim_chart).properties(
+    title="Vergleich der Verfahren",
+    width=800,
     height=300,
 ).save(data_path / "chart.svg")
