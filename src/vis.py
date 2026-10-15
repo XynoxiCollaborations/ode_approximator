@@ -34,10 +34,10 @@ heun_elided_data = heun_data.iloc[1::2]
 sim_data = pd.concat([lf_elided_data, rk4_data, heun_elided_data])
 sim_chart = (
     alt.Chart(sim_data)
-    .mark_point(
+    .mark_line(
         size=14,
-        opacity=1.0,
-        filled=True,
+        opacity=1,
+        strokeWidth=1.5,
     )
     .encode(
         x=x_format,
@@ -57,6 +57,7 @@ num_graph = (
     .mark_line(
         color="black",
         strokeWidth=1,
+        strokeDash=[4, 4],
     )
     .encode(
         x=x_format,
@@ -67,7 +68,7 @@ num_graph = (
     )
 )
 
-(num_graph + sim_chart).properties(
+(sim_chart + num_graph).properties(
     title="Vergleich der Verfahren",
     width=800,
     height=300,

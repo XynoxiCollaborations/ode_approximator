@@ -1,4 +1,4 @@
-se anyhow::Result;
+use anyhow::Result;
 use arrow_array::{ArrayRef, Float64Array, RecordBatch};
 use ordered_float::OrderedFloat;
 use parquet::arrow::ArrowWriter;
@@ -168,35 +168,28 @@ impl SpringSystem {
 
 // Runge-Kutta 4th Order
 impl SpringSystem {
-    fn rk4_x(&self) -> Position {
-        let v_i = self.last_v();
-        let x_i = self.last_x();
-
-        let k_1 = v_i;
-        let k_2 = v_i + 0.5 * self.delta_time.0 * k_1;
-        let k_3 = v_i + 0.5 * self.delta_time.0 * k_2;
-        let k_4 = v_i + self.delta_time.0 * k_3;
-
-        x_i + (self.delta_time.0 / 6.0) * (k_1 + 2.0 * k_2 + 2.0 * k_3 + k_4)
-    }
-
-    fn rk4_v(&self) -> Velocity {
-        let x_i = self.last_x();
-        let v_i = self.last_v();
-
-        let k_1 = self.a(x_i);
-        let k_2 = self.a(x_i + 0.5 * self.delta_time.0 * k_1);
-        let k_3 = self.a(x_i + 0.5 * self.delta_time.0 * k_2);
-        let k_4 = self.a(x_i + self.delta_time.0 * k_3);
-
-        v_i + (self.delta_time.0 / 6.0) * (k_1 + 2.0 * k_2 + 2.0 * k_3 + k_4)
-    }
-
     fn rk4_step(&mut self) {
-        let x = self.rk4_x();
-        let v = self.rk4_v();
+        let x_i = self.last_x();
+        let v_i = self.last_v();
+        let dt = self.delta_time.0;
+
+        let k1_x = v_i;
+        let k1_v = self.a(x_i);
+
+        let k2_x = v_i + 0.5 * dt * k1_v;
+        let k2_v = self.a(x_i + 0.5 * dt * k1_x);
+
+        let k3_x = v_i + 0.5 * dt * k2_v;
+        let k3_v = self.a(x_i + 0.5 * dt * k2_x);
+
+        let k4_x = v_i + dt * k3_v;
+        let k4_v = self.a(x_i + dt * k3_x);
+
+        let x = x_i + (dt / 6.0) * (k1_x + 2.0 * k2_x + 2.0 * k3_x + k4_x);
+        let v = v_i + (dt / 6.0) * (k1_v + 2.0 * k2_v + 2.0 * k3_v + k4_v);
         let a = self.a(x);
-        let t = self.last_t() + self.delta_time.0;
+
+        let t = self.last_t() + dt;
         let mech_vals = MechanicalValues::new(x, v, a);
         self.values.insert(t, mech_vals);
     }
@@ -288,11 +281,11 @@ impl SpringSystem {
 }
 
 fn main() -> Result<()> {
-    let steps = 200;
+    let steps = 40;
 
     let spring_constant = 1.0;
     let position = 1.0;
-    let time = OrderedFloat(0.1);
+    let time = OrderedFloat(0.5);
     let mass = 1.0;
 
     // Leapfrog
