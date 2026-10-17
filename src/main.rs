@@ -18,7 +18,6 @@ struct SpringSystem {
     values: BTreeMap<Time, MechanicalValues>,
     delta_time: Time,
     mass: Mass,
-    amplitude: Position,
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -45,14 +44,12 @@ impl SpringSystem {
         let a = -(spring_constant / mass) * position;
         let mech_val = MechanicalValues::new(position, 0.0, a);
         values.insert(OrderedFloat(0.0), mech_val);
-        let amplitude = position;
 
         Self {
             values,
             spring_constant,
             mass,
             delta_time,
-            amplitude,
         }
     }
 
@@ -142,17 +139,15 @@ impl SpringSystem {
         let mut values = BTreeMap::new();
 
         let a = -(spring_constant / mass) * position;
-        let v = 0.5 * a;
+        let v = 0.5 * a * delta_time.0;
         let mech_val = MechanicalValues::new(position, v, a);
         values.insert(OrderedFloat(0.0), mech_val);
-        let amplitude = position;
 
         Self {
             values,
             spring_constant,
             mass,
             delta_time,
-            amplitude,
         }
     }
 
