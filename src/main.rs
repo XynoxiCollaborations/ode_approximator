@@ -138,22 +138,38 @@ impl SpringSystem {
 
 // Leapfrog
 impl SpringSystem {
+    fn lf_new(spring_constant: Spring, position: Position, delta_time: Time, mass: Mass) -> Self {
+        let mut values = BTreeMap::new();
+
+        let a = -(spring_constant / mass) * position;
+        let v = 0.5 * a;
+        let mech_val = MechanicalValues::new(position, v, a);
+        values.insert(OrderedFloat(0.0), mech_val);
+        let amplitude = position;
+
+        Self {
+            values,
+            spring_constant,
+            mass,
+            delta_time,
+            amplitude,
+        }
+    }
+
     fn lf_v(&self) -> Velocity {
         let v_i = self.last_v();
         let a_i = self.last_a();
-        let a_i_next = self.a(self.lf_x());
         let dt = self.delta_time.0;
 
-        v_i + 0.5 * (a_i + a_i_next) * dt
+        v_i + a_i * dt
     }
 
     fn lf_x(&self) -> Position {
         let x_i = self.last_x();
-        let v_i = self.last_v();
-        let a_i = self.last_a();
+        let v_i = self.lf_v();
         let dt = self.delta_time.0;
 
-        x_i + v_i * dt + 0.5 * a_i * dt.powi(2)
+        x_i + v_i * dt
     }
 
     fn lf_step(&mut self) {
@@ -292,7 +308,7 @@ fn main() -> Result<()> {
     {
         let path = "./data/leapfrog.parquet";
 
-        let mut system = SpringSystem::new(spring_constant, position, time, mass);
+        let mut system = SpringSystem::lf_new(spring_constant, position, time, mass);
         for _ in 0..steps {
             system.lf_step();
         }

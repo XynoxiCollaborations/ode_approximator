@@ -70,6 +70,6 @@ num_graph = (
 
 (sim_chart + num_graph).properties(
     title="Vergleich der Verfahren",
-    width=800,
-    height=300,
+    width=600,
+    height=250,
 ).save(data_path / "chart.svg")

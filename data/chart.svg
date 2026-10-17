@@ -1,57 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="marks"
-     width="854" height="409" viewBox="0 0 854 409">
-    <rect width="854" height="409" fill="white"/>
+     width="654" height="359" viewBox="0 0 654 359">
+    <rect width="654" height="359" fill="white"/>
     <g fill="none" stroke-miterlimit="10" transform="translate(47,27)">
         <g class="mark-group role-frame root" role="graphics-object" aria-roledescription="group mark container">
             <g transform="translate(0,0)">
-                <path class="background" aria-hidden="true" d="M0.5,0.5h800v300h-800Z" stroke="#ddd"/>
+                <path class="background" aria-hidden="true" d="M0.5,0.5h600v250h-600Z" stroke="#ddd"/>
                 <g>
                     <g class="mark-group role-axis" aria-hidden="true">
-                        <g transform="translate(0.5,300.5)">
+                        <g transform="translate(0.5,250.5)">
                             <path class="background" aria-hidden="true" d="M0,0h0v0h0Z" pointer-events="none"/>
                             <g>
                                 <g class="mark-rule role-axis-grid" pointer-events="none">
-                                    <line transform="translate(0,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(40,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(30,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(80,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(60,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(120,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(90,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(160,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(120,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(200,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(150,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(240,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(180,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(280,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(210,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(320,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(240,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(360,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(270,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(400,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(300,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(440,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(330,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(480,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(360,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(520,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(390,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(560,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(420,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(600,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(450,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(640,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(480,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(680,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(510,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(720,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(540,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(760,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(570,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(800,-300)" x2="0" y2="300" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(600,-250)" x2="0" y2="250" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
                                 </g>
                             </g>
@@ -63,31 +63,31 @@
                             <path class="background" aria-hidden="true" d="M0,0h0v0h0Z" pointer-events="none"/>
                             <g>
                                 <g class="mark-rule role-axis-grid" pointer-events="none">
-                                    <line transform="translate(0,300)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,250)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,275)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,229)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,250)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,208)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,225)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,188)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,200)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,167)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,175)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,146)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,150)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,125)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,125)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,104)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,100)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,83)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,75)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,63)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,50)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,42)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,25)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,21)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,0)" x2="800" y2="0" stroke="#ddd" stroke-width="1"
+                                    <line transform="translate(0,0)" x2="600" y2="0" stroke="#ddd" stroke-width="1"
                                           opacity="1"/>
                                 </g>
                             </g>
@@ -96,124 +96,124 @@
                     </g>
                     <g class="mark-group role-axis" role="graphics-symbol" aria-roledescription="axis"
                        aria-label="X-axis titled 'Zeit (s)' for a linear scale with values from 0 to 20">
-                        <g transform="translate(0.5,300.5)">
+                        <g transform="translate(0.5,250.5)">
                             <path class="background" aria-hidden="true" d="M0,0h0v0h0Z" pointer-events="none"/>
                             <g>
                                 <g class="mark-rule role-axis-tick" pointer-events="none">
                                     <line transform="translate(0,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(40,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(30,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(80,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(60,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                          opacity="1"/>
+                                    <line transform="translate(90,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                     <line transform="translate(120,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(160,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(150,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(200,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(180,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                          opacity="1"/>
+                                    <line transform="translate(210,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                     <line transform="translate(240,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(280,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(270,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(320,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(300,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                          opacity="1"/>
+                                    <line transform="translate(330,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                     <line transform="translate(360,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(400,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(390,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(440,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(420,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                          opacity="1"/>
+                                    <line transform="translate(450,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                     <line transform="translate(480,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(520,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(510,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(560,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                    <line transform="translate(540,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
+                                          opacity="1"/>
+                                    <line transform="translate(570,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                     <line transform="translate(600,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
-                                          opacity="1"/>
-                                    <line transform="translate(640,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
-                                          opacity="1"/>
-                                    <line transform="translate(680,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
-                                          opacity="1"/>
-                                    <line transform="translate(720,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
-                                          opacity="1"/>
-                                    <line transform="translate(760,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
-                                          opacity="1"/>
-                                    <line transform="translate(800,0)" x2="0" y2="5" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                 </g>
                                 <g class="mark-text role-axis-label" pointer-events="none">
                                     <text text-anchor="start" transform="translate(0,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">0
                                     </text>
-                                    <text text-anchor="middle" transform="translate(40,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(30,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">1
                                     </text>
-                                    <text text-anchor="middle" transform="translate(80,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(60,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">2
                                     </text>
-                                    <text text-anchor="middle" transform="translate(120,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(90,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">3
                                     </text>
-                                    <text text-anchor="middle" transform="translate(160,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(120,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">4
                                     </text>
-                                    <text text-anchor="middle" transform="translate(200,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(150,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">5
                                     </text>
-                                    <text text-anchor="middle" transform="translate(240,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(180,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">6
                                     </text>
-                                    <text text-anchor="middle" transform="translate(280,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(210,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">7
                                     </text>
-                                    <text text-anchor="middle" transform="translate(320,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(240,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">8
                                     </text>
-                                    <text text-anchor="middle" transform="translate(360,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(270,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">9
                                     </text>
-                                    <text text-anchor="middle" transform="translate(400,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(300,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">10
                                     </text>
-                                    <text text-anchor="middle" transform="translate(440.00000000000006,15)"
-                                          font-family="sans-serif" font-size="10px" fill="#000" opacity="1">11
+                                    <text text-anchor="middle" transform="translate(330,15)" font-family="sans-serif"
+                                          font-size="10px" fill="#000" opacity="1">11
                                     </text>
-                                    <text text-anchor="middle" transform="translate(480,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(360,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">12
                                     </text>
-                                    <text text-anchor="middle" transform="translate(520,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(390,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">13
                                     </text>
-                                    <text text-anchor="middle" transform="translate(560,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(420,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">14
                                     </text>
-                                    <text text-anchor="middle" transform="translate(600,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(450,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">15
                                     </text>
-                                    <text text-anchor="middle" transform="translate(640,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(480,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">16
                                     </text>
-                                    <text text-anchor="middle" transform="translate(680,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(510,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">17
                                     </text>
-                                    <text text-anchor="middle" transform="translate(720,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(540,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">18
                                     </text>
-                                    <text text-anchor="middle" transform="translate(760,15)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(570,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">19
                                     </text>
-                                    <text text-anchor="end" transform="translate(800,15)" font-family="sans-serif"
+                                    <text text-anchor="end" transform="translate(600,15)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">20
                                     </text>
                                 </g>
                                 <g class="mark-rule role-axis-domain" pointer-events="none">
-                                    <line transform="translate(0,0)" x2="800" y2="0" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,0)" x2="600" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                 </g>
                                 <g class="mark-text role-axis-title" pointer-events="none">
-                                    <text text-anchor="middle" transform="translate(400,30)" font-family="sans-serif"
+                                    <text text-anchor="middle" transform="translate(300,30)" font-family="sans-serif"
                                           font-size="11px" font-weight="bold" fill="#000" opacity="1">Zeit (s)
                                     </text>
                                 </g>
@@ -227,68 +227,68 @@
                             <path class="background" aria-hidden="true" d="M0,0h0v0h0Z" pointer-events="none"/>
                             <g>
                                 <g class="mark-rule role-axis-tick" pointer-events="none">
-                                    <line transform="translate(0,300)" x2="-5" y2="0" stroke="#888" stroke-width="1"
-                                          opacity="1"/>
-                                    <line transform="translate(0,275)" x2="-5" y2="0" stroke="#888" stroke-width="1"
-                                          opacity="1"/>
                                     <line transform="translate(0,250)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,225)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,229)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,200)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,208)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,175)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,188)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,150)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,167)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                          opacity="1"/>
+                                    <line transform="translate(0,146)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                     <line transform="translate(0,125)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,100)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,104)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,75)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,83)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,50)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,63)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
-                                    <line transform="translate(0,25)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,42)" x2="-5" y2="0" stroke="#888" stroke-width="1"
+                                          opacity="1"/>
+                                    <line transform="translate(0,21)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                     <line transform="translate(0,0)" x2="-5" y2="0" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                 </g>
                                 <g class="mark-text role-axis-label" pointer-events="none">
-                                    <text text-anchor="end" transform="translate(-7,303)" font-family="sans-serif"
+                                    <text text-anchor="end" transform="translate(-7,253)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">−3.0
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,278)" font-family="sans-serif"
-                                          font-size="10px" fill="#000" opacity="1">−2.5
+                                    <text text-anchor="end" transform="translate(-7,232.16666666666666)"
+                                          font-family="sans-serif" font-size="10px" fill="#000" opacity="1">−2.5
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,253)" font-family="sans-serif"
-                                          font-size="10px" fill="#000" opacity="1">−2.0
+                                    <text text-anchor="end" transform="translate(-7,211.33333333333334)"
+                                          font-family="sans-serif" font-size="10px" fill="#000" opacity="1">−2.0
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,228)" font-family="sans-serif"
+                                    <text text-anchor="end" transform="translate(-7,190.5)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">−1.5
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,203.00000000000003)"
+                                    <text text-anchor="end" transform="translate(-7,169.66666666666669)"
                                           font-family="sans-serif" font-size="10px" fill="#000" opacity="1">−1.0
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,177.99999999999997)"
+                                    <text text-anchor="end" transform="translate(-7,148.83333333333331)"
                                           font-family="sans-serif" font-size="10px" fill="#000" opacity="1">−0.5
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,153)" font-family="sans-serif"
+                                    <text text-anchor="end" transform="translate(-7,128)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">0.0
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,127.99999999999999)"
+                                    <text text-anchor="end" transform="translate(-7,107.16666666666666)"
                                           font-family="sans-serif" font-size="10px" fill="#000" opacity="1">0.5
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,103.00000000000001)"
+                                    <text text-anchor="end" transform="translate(-7,86.33333333333334)"
                                           font-family="sans-serif" font-size="10px" fill="#000" opacity="1">1.0
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,78)" font-family="sans-serif"
+                                    <text text-anchor="end" transform="translate(-7,65.5)" font-family="sans-serif"
                                           font-size="10px" fill="#000" opacity="1">1.5
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,52.999999999999986)"
+                                    <text text-anchor="end" transform="translate(-7,44.66666666666666)"
                                           font-family="sans-serif" font-size="10px" fill="#000" opacity="1">2.0
                                     </text>
-                                    <text text-anchor="end" transform="translate(-7,28.00000000000001)"
+                                    <text text-anchor="end" transform="translate(-7,23.833333333333343)"
                                           font-family="sans-serif" font-size="10px" fill="#000" opacity="1">2.5
                                     </text>
                                     <text text-anchor="end" transform="translate(-7,3)" font-family="sans-serif"
@@ -296,12 +296,12 @@
                                     </text>
                                 </g>
                                 <g class="mark-rule role-axis-domain" pointer-events="none">
-                                    <line transform="translate(0,300)" x2="0" y2="-300" stroke="#888" stroke-width="1"
+                                    <line transform="translate(0,250)" x2="0" y2="-250" stroke="#888" stroke-width="1"
                                           opacity="1"/>
                                 </g>
                                 <g class="mark-text role-axis-title" pointer-events="none">
                                     <text text-anchor="middle"
-                                          transform="translate(-30.7412109375,150) rotate(-90) translate(0,-2)"
+                                          transform="translate(-30.7412109375,125) rotate(-90) translate(0,-2)"
                                           font-family="sans-serif" font-size="11px" font-weight="bold" fill="#000"
                                           opacity="1">Position (m)
                                     </text>
@@ -313,39 +313,39 @@
                     <g class="mark-group role-scope layer_0_pathgroup" role="graphics-object"
                        aria-roledescription="group mark container">
                         <g transform="translate(0,0)">
-                            <path class="background" aria-hidden="true" d="M0,0h800v300h-800Z"/>
+                            <path class="background" aria-hidden="true" d="M0,0h600v250h-600Z"/>
                             <g>
                                 <g class="mark-line role-mark layer_0_marks" role="graphics-object"
                                    aria-roledescription="line mark container">
                                     <path aria-label="Zeit (s): 0; Position (m): 1; model: Leapfrog"
                                           role="graphics-symbol" aria-roledescription="line mark"
-                                          d="M0,100L40,123.438L80,171.777L120,199.701L160,181.03L200,133.268L240,101.193L280,114.874L320,161.486L360,197.33L400,188.802L440,143.897L480,104.714L520,107.986L560,150.646L600,192.701L640,194.723L680,154.818L720,110.396L760,103.103L800,139.776"
+                                          d="M0,83.333L30,130.208L60,172.201L90,169.942L120,125.551L150,80.643L180,77.32L210,118.697L240,165.983L270,174.848L300,136.98L330,87.881L360,73.581L390,107.487L420,157.811L450,177.375L480,147.838L510,96.89L540,72.296L570,97.112L600,148.073"
                                           stroke="red" stroke-width="1.5" opacity="1"/>
                                 </g>
                             </g>
                             <path class="foreground" aria-hidden="true" d="" display="none"/>
                         </g>
                         <g transform="translate(0,0)">
-                            <path class="background" aria-hidden="true" d="M0,0h800v300h-800Z"/>
+                            <path class="background" aria-hidden="true" d="M0,0h600v250h-600Z"/>
                             <g>
                                 <g class="mark-line role-mark layer_0_marks" role="graphics-object"
                                    aria-roledescription="line mark container">
                                     <path aria-label="Zeit (s): 0; Position (m): 1; model: Runge-Kutta (4. Ordnung)"
                                           role="graphics-symbol" aria-roledescription="line mark"
-                                          d="M0,100L20,106.12L40,122.971L60,146.429L80,170.755L100,190.001L120,199.458L140,196.817L160,182.727L180,160.634L200,135.946L220,114.7L240,102.092L260,101.204L280,112.251L300,132.529L320,157.075L340,179.886L360,195.382L380,199.776L400,191.994L420,173.943L440,150.04L460,126.132L480,108.067L500,100.262L520,104.623L540,120.082L560,142.855L580,167.371L600,187.633L620,198.686L640,197.83L660,185.275L680,164.096L700,139.473L720,117.43L740,103.358L760,100.696L780,110.094L800,129.25"
+                                          d="M0,83.333L15,88.433L30,102.475L45,122.024L60,142.296L75,158.334L90,166.215L105,164.015L120,152.272L135,133.862L150,113.288L165,95.583L180,85.077L195,84.337L210,93.543L225,110.441L240,130.896L255,149.905L270,162.818L285,166.48L300,159.995L315,144.953L330,125.033L345,105.11L360,90.056L375,83.551L390,87.186L405,100.068L420,119.046L435,139.476L450,156.361L465,165.572L480,164.858L495,154.396L510,136.746L525,116.227L540,97.858L555,86.132L570,83.914L585,91.745L600,107.709"
                                           stroke="orange" stroke-width="1.5" opacity="1"/>
                                 </g>
                             </g>
                             <path class="foreground" aria-hidden="true" d="" display="none"/>
                         </g>
                         <g transform="translate(0,0)">
-                            <path class="background" aria-hidden="true" d="M0,0h800v300h-800Z"/>
+                            <path class="background" aria-hidden="true" d="M0,0h600v250h-600Z"/>
                             <g>
                                 <g class="mark-line role-mark layer_0_marks" role="graphics-object"
                                    aria-roledescription="line mark container">
                                     <path aria-label="Zeit (s): 0.5; Position (m): 0.875; model: Heun"
                                           role="graphics-symbol" aria-roledescription="line mark"
-                                          d="M20,106.25L60,149.316L100,194.423L140,196.516L180,152.148L220,104.234L260,100.588L300,146.251L340,197.102L380,202.441L420,155.494L460,101.573L500,94.393L540,142.607L580,199.735L620,208.915L660,159.455L700,98.98L740,87.633L780,138.311"
+                                          d="M15,88.542L45,124.43L75,162.019L105,163.764L135,126.79L165,86.861L195,83.823L225,121.876L255,164.252L285,168.701L315,129.578L345,84.644L375,78.661L405,118.839L435,166.446L465,174.096L495,132.879L525,82.483L555,73.028L585,115.259"
                                           stroke="green" stroke-width="1.5" opacity="1"/>
                                 </g>
                             </g>
@@ -355,13 +355,13 @@
                     <g class="mark-group role-scope layer_1_pathgroup" role="graphics-object"
                        aria-roledescription="group mark container">
                         <g transform="translate(0,0)">
-                            <path class="background" aria-hidden="true" d="M0,0h800v300h-800Z"/>
+                            <path class="background" aria-hidden="true" d="M0,0h600v250h-600Z"/>
                             <g>
                                 <g class="mark-line role-mark layer_1_marks" role="graphics-object"
                                    aria-roledescription="line mark container">
                                     <path aria-label="Zeit (s): 0; Position (m): 1; model: Exakte Lösung"
                                           role="graphics-symbol" aria-roledescription="line mark"
-                                          d="M0,100L4,100.25L8,100.997L12,102.233L16,103.947L20,106.121L24,108.733L28,111.758L32,115.165L36,118.92L40,122.985L44,127.32L48,131.882L52,136.625L56,141.502L60,146.463L64,151.46L68,156.442L72,161.36L76,166.164L80,170.807L84,175.242L88,179.425L92,183.314L96,186.87L100,190.057L104,192.844L108,195.204L112,197.111L116,198.548L120,199.5L124,199.957L128,199.915L132,199.374L136,198.34L140,196.823L144,194.838L148,192.405L152,189.548L156,186.297L160,182.682L164,178.741L168,174.513L172,170.04L176,165.367L180,160.54L184,155.608L188,150.619L192,145.625L196,140.674L200,135.817L204,131.101L208,126.574L212,122.281L216,118.265L220,114.567L224,111.222L228,108.264L232,105.724L236,103.626L240,101.991L244,100.837L248,100.173L252,100.007L256,100.341L260,101.171L264,102.488L268,104.281L272,106.53L276,109.214L280,112.305L284,115.773L288,119.582L292,123.696L296,128.073L300,132.668L304,137.437L308,142.331L312,147.302L316,152.3L320,157.275L324,162.177L328,166.958L332,171.569L336,175.964L340,180.101L344,183.936L348,187.432L352,190.555L356,193.272L360,195.557L364,197.386L368,198.742L372,199.611L376,199.985L380,199.859L384,199.234L388,198.118L392,196.521L396,194.46L400,191.954L404,189.028L408,185.713L412,182.041L416,178.049L420,173.777L424,169.267L428,164.564L432,159.716L436,154.771L440,149.779L444,144.788L448,139.85L452,135.013L456,130.325L460,125.835L464,121.586L468,117.62L472,113.978L476,110.696L480,107.807L484,105.34L488,103.318L492,101.763L496,100.69L500,100.11L504,100.028L508,100.446L512,101.358L516,102.757L520,104.628L524,106.952L528,109.706L532,112.863L536,116.39L540,120.254L544,124.415L548,128.831L552,133.459L556,138.253L560,143.163L564,148.142L568,153.14L572,158.106L576,162.991L580,167.746L584,172.324L588,176.679L592,180.768L596,184.549L600,187.984L604,191.041L608,193.687L612,195.897L616,197.648L620,198.923L624,199.709L628,199.998L632,199.788L636,199.081L640,197.883L644,196.207L648,194.069L652,191.49L656,188.497L660,185.12L664,181.391L668,177.349L672,173.034L676,168.488L680,163.758L684,158.89L688,153.934L692,148.938L696,143.953L700,139.028L704,134.213L708,129.555L712,125.102L716,120.898L720,116.984L724,113.4L728,110.182L732,107.362L736,104.968L740,103.024L744,101.549L748,100.558L752,100.061L756,100.064L760,100.565L764,101.56L768,103.039L772,104.987L776,107.385L780,110.209L784,113.431L788,117.018L792,120.934L796,125.141L800,129.596"
+                                          d="M0,83.333L3,83.541L6,84.164L9,85.194L12,86.622L15,88.434L18,90.611L21,93.132L24,95.971L27,99.1L30,102.487L33,106.1L36,109.902L39,113.854L42,117.918L45,122.053L48,126.217L51,130.369L54,134.467L57,138.47L60,142.339L63,146.035L66,149.521L69,152.762L72,155.725L75,158.381L78,160.704L81,162.67L84,164.259L87,165.457L90,166.25L93,166.631L96,166.596L99,166.145L102,165.283L105,164.019L108,162.365L111,160.338L114,157.957L117,155.247L120,152.235L123,148.951L126,145.428L129,141.7L132,137.806L135,133.783L138,129.673L141,125.516L144,121.354L147,117.229L150,113.181L153,109.251L156,105.478L159,101.901L162,98.554L165,95.472L168,92.685L171,90.22L174,88.103L177,86.355L180,84.993L183,84.03L186,83.477L189,83.339L192,83.617L195,84.309L198,85.407L201,86.901L204,88.775L207,91.011L210,93.587L213,96.477L216,99.652L219,103.08L222,106.727L225,110.557L228,114.531L231,118.609L234,122.752L237,126.917L240,131.063L243,135.148L246,139.131L249,142.974L252,146.637L255,150.084L258,153.28L261,156.194L264,158.796L267,161.06L270,162.964L273,164.488L276,165.618L279,166.343L282,166.654L285,166.549L288,166.029L291,165.099L294,163.768L297,162.05L300,159.961L303,157.524L306,154.761L309,151.701L312,148.374L315,144.814L318,141.056L321,137.137L324,133.097L327,128.976L330,124.816L333,120.657L336,116.541L339,112.511L342,108.605L345,104.862L348,101.321L351,98.017L354,94.982L357,92.247L360,89.839L363,87.783L366,86.099L369,84.803L372,83.909L375,83.425L378,83.357L381,83.705L384,84.465L387,85.631L390,87.19L393,89.126L396,91.422L399,94.052L402,96.992L405,100.212L408,103.679L411,107.359L414,111.216L417,115.21L420,119.303L423,123.452L426,127.616L429,131.755L432,135.826L435,139.789L438,143.604L441,147.233L444,150.64L447,153.791L450,156.654L453,159.201L456,161.406L459,163.247L462,164.706L465,165.769L468,166.424L471,166.665L474,166.49L477,165.901L480,164.902L483,163.506L486,161.724L489,159.575L492,157.081L495,154.267L498,151.16L501,147.791L504,144.195L507,140.407L510,136.465L513,132.409L516,128.278L519,124.115L522,119.961L525,115.857L528,111.844L531,107.963L534,104.252L537,100.748L540,97.487L543,94.5L546,91.819L549,89.468L552,87.473L555,85.853L558,84.624L561,83.798L564,83.384L567,83.386L570,83.804L573,84.633L576,85.866L579,87.489L582,89.488L585,91.841L588,94.526L591,97.515L594,100.778L597,104.284L600,107.997"
                                           stroke="black" stroke-width="1" stroke-dasharray="4,4"/>
                                 </g>
                             </g>
@@ -370,7 +370,7 @@
                     </g>
                     <g class="mark-group role-legend" role="graphics-symbol" aria-roledescription="legend"
                        aria-label="Symbol legend titled 'Model' for stroke color with 4 values: Exakte Lösung, Leapfrog, Runge-Kutta (4. Ordnung), Heun">
-                        <g transform="translate(0,350)">
+                        <g transform="translate(0,300)">
                             <path class="background" aria-hidden="true" d="M0,0h344v27h-344Z" pointer-events="none"/>
                             <g>
                                 <g class="mark-group role-legend-entry">
@@ -472,7 +472,7 @@
                         </g>
                     </g>
                     <g class="mark-group role-title">
-                        <g transform="translate(400,-22)">
+                        <g transform="translate(300,-22)">
                             <path class="background" aria-hidden="true" d="M0,0h0v0h0Z" pointer-events="none"/>
                             <g>
                                 <g class="mark-text role-title-text" role="graphics-symbol" aria-roledescription="title"

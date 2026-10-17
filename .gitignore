@@ -3,3 +3,4 @@
 .venv
 *.lock
 .python-version
+*.csv
