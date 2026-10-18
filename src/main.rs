@@ -139,7 +139,7 @@ impl SpringSystem {
         let mut values = BTreeMap::new();
 
         let a = -(spring_constant / mass) * position;
-        let v = 0.5 * a * delta_time.0;
+        let v = -0.5 * a * delta_time.0;
         let mech_val = MechanicalValues::new(position, v, a);
         values.insert(OrderedFloat(0.0), mech_val);
 

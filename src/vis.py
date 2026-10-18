@@ -9,10 +9,10 @@ x_format = alt.X("time:Q", title="Zeit (s)").scale(domain=(0, 20))
 y_format = (
     alt.Y("position:Q", title="Position (m)")
     .scale(
-        domain=(-3.0, 3.0),
+        domain=(-1.5, 1.5),
     )
     .axis(
-        values=np.arange(-3.0, 3.5, 0.5).tolist(),
+        values=np.arange(-1.5, 2.5, 0.5).tolist(),
     )
 )
 
@@ -43,7 +43,7 @@ sim_chart = (
         x=x_format,
         y=y_format,
         color=alt.Color("model:N", scale=model_scale).legend(
-            title="Model", orient="bottom"
+            title="Verfahren", orient="bottom"
         ),
     )
 )
@@ -63,13 +63,12 @@ num_graph = (
         x=x_format,
         y=y_format,
         color=alt.Color("model:N", scale=model_scale).legend(
-            title="Model", orient="bottom"
+            title="Verfahren", orient="bottom"
         ),
     )
 )
 
 (sim_chart + num_graph).properties(
-    title="Vergleich der Verfahren",
-    width=600,
-    height=250,
+    width=400,
+    height=125,
 ).save(data_path / "chart.svg")
